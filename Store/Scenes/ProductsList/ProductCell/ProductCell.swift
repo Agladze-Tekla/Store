@@ -38,6 +38,9 @@ final class ProductCell: UITableViewCell {
         quantityModifierView.layer.cornerRadius = 5
         quantityModifierView.layer.borderWidth = 1
         quantityModifierView.layer.borderColor = UIColor.lightGray.cgColor
+        
+        prodTitleLbl.numberOfLines = 2
+        descrLbl.numberOfLines = 3
     }
     
     func reload(with product: ProductModel) {
@@ -66,4 +69,15 @@ final class ProductCell: UITableViewCell {
     @IBAction func removeProduct(_ sender: Any) {
         delegate?.removeProduct(for: self)
     }
+    
+    // MARK: - CellLifeCycle
+    //Do not forget func prepareForReuse().
+      override func prepareForReuse() {
+          super.prepareForReuse()
+        prodTitleLbl.text = nil
+        stockLbl.text = nil
+        descrLbl.text = nil
+        priceLbl.text = nil
+        selectedQuantityLbl.text = nil
+      }
 }

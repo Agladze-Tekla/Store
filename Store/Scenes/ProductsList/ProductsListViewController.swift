@@ -8,7 +8,9 @@
 import UIKit
 
 final class ProductsListViewController: UIViewController {
+    //Made functions private and classes final.
     
+    //MARK: - Properties
     private let productsTableView: UITableView = {
        let tableView = UITableView()
         tableView.backgroundColor = .purple
@@ -35,7 +37,9 @@ final class ProductsListViewController: UIViewController {
     }()
     
     private let productsViewModel = ProductsListViewModel()
+    private var products = [ProductModel]()
 
+    //MARK: - ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -44,15 +48,15 @@ final class ProductsListViewController: UIViewController {
         activityIndicator.startAnimating()
     }
     
-    //MARK: setup UI
-    func setupUI() {
+    //MARK: - Setup UI
+    private func setupUI() {
         view.backgroundColor = .orange
         setupTableView()
         setupIndicator()
         setupTotalPriceLbl()
     }
     
-    func setupTableView() {
+    private func setupTableView() {
         view.addSubview(productsTableView)
         
         NSLayoutConstraint.activate([
@@ -61,11 +65,12 @@ final class ProductsListViewController: UIViewController {
             productsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             productsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
-        
+        //Forgot to source data, without this product information would not load.
+        productsTableView.dataSource = self
         productsTableView.register(UINib(nibName: "ProductCell", bundle: nil), forCellReuseIdentifier: "ProductCell")
     }
     
-    func setupIndicator() {
+    private func setupIndicator() {
         
         view.addSubview(activityIndicator)
         
@@ -75,7 +80,7 @@ final class ProductsListViewController: UIViewController {
         ])
     }
     
-    func setupTotalPriceLbl() {
+    private func setupTotalPriceLbl() {
         view.addSubview(totalPriceLbl)
         
         NSLayoutConstraint.activate([
@@ -85,15 +90,18 @@ final class ProductsListViewController: UIViewController {
         ])
     }
     
-    //MARK: Setup delegates
+    //MARK: - Setup delegates
     private func setupProductsViewModel() {
         productsViewModel.delegate = self
     }
 }
 
+//MARK: - TableView DataSource
 extension ProductsListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //TODO: - Fix product.count
+        //products.count
         10
     }
     
@@ -111,7 +119,13 @@ extension ProductsListViewController: UITableViewDataSource, UITableViewDelegate
     }
 }
 
+//MARK: - Delegates
 extension ProductsListViewController: ProductsListViewModelDelegate {
+
+    //Added an error function
+    func showError(_ error: Error) {
+        print("Error")
+    }
     
     func productsAmountChanged() {
         totalPriceLbl.text = "Total price: \(productsViewModel.totalPrice ?? 0)"
@@ -130,7 +144,7 @@ extension ProductsListViewController: ProductCellDelegate {
     
     func removeProduct(for cell: ProductCell) {
         if let indexPath = productsTableView.indexPath(for: cell) {
-            productsViewModel.removeProduct(at: indexPath.row + 1)
+            productsViewModel.removeProduct(at: indexPath.row)
         }
     }
     

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "DF3BBCCC-4EE7-4717-81AB-9F0B566677A6"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B36A0DE5-C80C-46D6-BDB8-352D13529636"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Store/Scenes/ProductsList/ProductsListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "37AEABCE-0945-4CDF-9C7A-BE0E7DC3D5A5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Store/Scenes/ProductsList/ProductsListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "ProductsListViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "37AEABCE-0945-4CDF-9C7A-BE0E7DC3D5A5 - 9c8ea935c2abc1a1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Store.ProductsListViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Store.ProductsListViewController"
+                  moduleName = "Store"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tekla/Desktop/Agladze%20Tekla/Store/Store/Scenes/ProductsList/ProductsListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "461">
+               </Location>
+               <Location
+                  uuid = "37AEABCE-0945-4CDF-9C7A-BE0E7DC3D5A5 - 37e9b222c4cf608d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Store.ProductsListViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Store.ProductsListViewController&gt;"
+                  moduleName = "Store"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tekla/Desktop/Agladze%20Tekla/Store/Store/Scenes/ProductsList/ProductsListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "399">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

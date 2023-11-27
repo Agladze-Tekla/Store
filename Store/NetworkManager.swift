@@ -14,7 +14,7 @@ final class NetworkManager {
     
     private init() {}
     
-    // MARK: - Fetch Movies
+    // MARK: - Fetch Products
     func fetchProducts(completion: @escaping (Result<[ProductModel], Error>) -> Void) {
         let urlStr = "https://dummyjson.com/products"
         
@@ -53,10 +53,9 @@ final class NetworkManager {
         }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
+            //Needs initializing
             guard 
-                let data = data,
-                error == nil,
-                let image = UIImage(data: data)
+                let data = data, error == nil, let image = UIImage(data: data)
             else {
                 completion(nil)
                 return
